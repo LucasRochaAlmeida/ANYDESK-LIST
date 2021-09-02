@@ -1,0 +1,73 @@
+body{
+    background-color: rgb(199, 247, 231);
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    font-size: 40px;
+}
+
+.main-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3{
+    font-family: 'Merriweather', serif;
+    margin-bottom: 2px;
+}
+
+.itens{
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+button{
+    width: 140px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
+}
+
+button:hover{
+    transition: 1s;
+    opacity: 0.5;
+}
+
+#button-consulta a img{
+    width: -webkit-fill-available;
+}
+
+#button-adicionar a img{
+    width: -webkit-fill-available;
+}
+
+@media(max-width: 768px){
+
+    .main-content{
+        flex-direction: column;
+    }
+
+    .itens{
+        padding: 0;
+    }
+
+    #button-consulta a img{
+        width: 125px;
+    }
+    
+    #button-adicionar a img{
+        width: 125px;
+    }
+}

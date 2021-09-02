@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(199, 247, 231);
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    font-size: 40px;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 400px;
+}
+
+.options button{
+    width: 130px;
+    height: 35px;
+    margin: 10px;
+
+    cursor: pointer;
+    border-radius: 9px;
+
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+}
+
+button:hover{
+    transition: 1s;
+    opacity: 0.8;
+    background-color: rgb(31, 145, 153);
+}
