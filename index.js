@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
+const handlebars = require('express-handlebars')
 
 const Atendimento = require('./models/atendimento')
 const Tabelas = require('./infraestrutura/tabelas')
@@ -13,17 +14,24 @@ server.use(bodyParser.json())
 server.use(express.static('styles'))
 server.use(express.static('images'))
 
+server.engine('handlebars', handlebars())
+server.set('view engine', 'handlebars')
+
 /* rotas */
 server.get('/home', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'home.html'))
+    res.sendFile(path.join(__dirname, 'views', 'home.html'))
 })
 
 server.get('/consult', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'consult.html'))
+    res.sendFile(path.join(__dirname, 'views', 'consult.html'))
 })
 
 server.get('/add', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'add.html'))
+    res.sendFile(path.join(__dirname, 'views', 'add.html'))
+})
+
+server.get('/list', (req, res) => {
+    res.render('list')
 })
 
 server.get('/lista', (req, res) => {
