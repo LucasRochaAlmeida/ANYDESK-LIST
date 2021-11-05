@@ -44,7 +44,7 @@ class Atendimento{
     }
 
     listaTijuco(res){
-        const sql = 'SELECT * FROM anydesklist WHERE unidade = "TIJUCO"'
+        const sql = 'SELECT * FROM anydesklist WHERE unidade = "TIJUCO PRETO"'
 
         conexao.query(sql, (erro, resultados) => {
             if(erro){
