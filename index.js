@@ -1,7 +1,6 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-const handlebars = require('express-handlebars')
 
 const Atendimento = require('./models/atendimento')
 const Tabelas = require('./infraestrutura/tabelas')
@@ -9,13 +8,15 @@ const conexao = require('./infraestrutura/conexao')
 
 const server = express()
 
+server.set('view engine', 'ejs')
+server.set('views', path.join(__dirname, 'views'))
+
 server.use(bodyParser.urlencoded({extended:true}))
 server.use(bodyParser.json())
 server.use(express.static('styles'))
 server.use(express.static('images'))
 
-server.engine('handlebars', handlebars())
-server.set('view engine', 'handlebars')
+
 
 /* rotas */
 server.get('/home', (req, res) => {
